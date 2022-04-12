@@ -1,3 +1,5 @@
+/*Import Cairo Font */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
 /* Main Variables */
 :root{
     --primary-color: #23D4CE;
@@ -6,12 +8,14 @@
     --gray: #EFEFEF;
     --gray-bg:#F7F7F7;
     --dark-gray: #556575;
+    --plan-one-color: #EA755D;
+    --plan-three-color: #273557;
 
 }
 
 /* Global Rules */
 *{
-    font-family: sans-serif;
+    font-family: 'Cairo', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -81,6 +85,8 @@ body{
     padding: 0.7rem 1.1rem;
     border-radius: 6px;
     text-transform: capitalize;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
 }
 
 .primary-btn{
@@ -88,9 +94,20 @@ body{
     color: var(--white);
 }
 
+.primary-btn:hover{
+    background-color: var(--white);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
 .secondry-btn{
     background-color: var(--white);
     color: var(--primary-color)
+}
+
+.secondry-btn:hover{
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
 /* Start Navbar */
@@ -232,7 +249,7 @@ body{
     display: flex;
     position: relative;
     justify-content: space-between;
-
+    margin: 2rem 0;
 }
 
 .features .feature .icon img{
@@ -241,13 +258,13 @@ body{
 }
 
 .features .left{
-    width: 35%;
+    width: 34%;
     text-align: right;
     margin-right: 0.6rem;
 }
 
 .features .right{
-    width: 35%;
+    width: 34%;
     text-align: left;
     margin-left: 0.6rem;
 }
@@ -281,7 +298,7 @@ body{
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -35%;
+    top: -45%;
     left: 50%;
     transform: translate(-50%);
 }
@@ -292,9 +309,220 @@ body{
 /* Start Brands */
 .brands{
     background-color: var(--gray-bg);
-    margin-top: 10rem;
+    margin-top: 15rem;
 }
 /* End Brands */
+
+/* Start Services */
+.services .container,
+.statistics .container{
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding: 3rem 0;
+}
+
+.services .container .information,
+.statistics .container .information{
+    text-align: right;
+}
+
+.services .container .information h3,
+.statistics .container .information h3{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.services .container .information .service-list{
+    margin-bottom: 2rem;
+}
+
+.services .container .information .service-list .list-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    gap: 0.7rem;
+}
+
+.services .container .information .service-list .list-item p{
+    color: var(--dark-gray);
+    line-height: 3;
+}
+/* End Services */
+
+/* Start statistics*/
+
+.statistics{
+    background-color: #23D4CE33;
+}
+
+.statistics .container{
+    gap: 5rem;
+}
+
+.statistics .container .image{
+    width: 53%;
+    order: 1;
+}
+
+.statistics .container .image img{
+    width: 100%;
+}
+
+.statistics .container .information{
+    order: 2;
+}
+
+.statistics .container .information .statistics-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.statistics .container .information .statistics-list .statistics-item{
+    width: 50%;
+    margin: 1rem 0;
+    font-size: 1.4rem;
+}
+
+.statistics .container .information .statistics-list .statistics-item p.number{
+    color: var(--primary-color);
+    font-size: 3rem;
+}
+/*End statistics/
+
+/*Start Pricing*/
+.pricing .container{
+    flex-wrap:nowrap ;
+    gap: 1rem;
+}
+
+.pricing .container .price-table{
+    width: 33%;
+    text-align: center;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    overflow: hidden;
+}
+
+.pricing .container .price-table .header{
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.pricing .container .price-table .plan-info{
+    padding: 1.3rem 0 0;
+    background-color: var(--gray-bg);
+}
+
+.pricing .container .price-table .plan-info p{
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.pricing .container .price-table .plan-info p span{
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--black);
+}
+
+
+.pricing .container .price-table .plan-features {
+    padding: 1rem;
+}
+
+.pricing .container .price-table .plan-features .feature{
+    text-align: right;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.pricing .container .price-table .plan-features .feature p{
+    font-size: 1.1rem;
+}
+
+.pricing .container .price-table .plan-features .btn{
+    display: inline-block;
+    border: 3px solid var(--black);
+    padding: 0.5rem 6rem;
+    margin: 1rem 0;
+}
+
+.pricing .container .price-table:nth-child(1){
+    border-color: var(--plan-one-color);
+}
+
+.pricing .container .price-table:nth-child(1) .header{
+    background-color: var(--plan-one-color);
+    color: var(--white);
+    border: 2px solid var(--plan-one-color);
+    ;
+}
+
+.pricing .container .price-table:nth-child(1) .plan-info p{
+    color: var(--plan-one-color);
+}
+
+.pricing .container .price-table:nth-child(1) .btn{
+    border-color: var(--plan-one-color);
+    color: var(--plan-one-color);
+}
+
+.pricing .container .price-table:nth-child(1) .btn:hover{
+    background-color: var(--plan-one-color);
+    color: var(--white);
+}
+
+
+.pricing .container .price-table:nth-child(2){
+    border-color: var(--primary-color);
+}
+
+.pricing .container .price-table:nth-child(2) .header{
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+    ;
+}
+
+.pricing .container .price-table:nth-child(2) .plan-info p{
+    color: var(--primary-color);
+}
+
+.pricing .container .price-table:nth-child(2) .btn{
+    border-color: var(--primary-color);
+}
+
+
+.pricing .container .price-table:nth-child(3){
+    border-color: var(--plan-three-color);
+}
+
+.pricing .container .price-table:nth-child(3) .header{
+    background-color: var(--plan-three-color);
+    color: var(--white);
+    border: 2px solid var(--plan-three-color);
+    ;
+}
+
+.pricing .container .price-table:nth-child(3) .plan-info p{
+    color: var(--plan-three-color);
+}
+
+.pricing .container .price-table:nth-child(3) .btn{
+    border-color: var(--plan-three-color);
+    color: var(--plan-three-color);
+}
+
+.pricing .container .price-table:nth-child(3) .btn:hover{
+    background-color: var(--plan-three-color);
+    color: var(--white);
+}
+/*End Pricing*/
 
 
 /* Start Testimonials */
@@ -434,7 +662,7 @@ body{
     }
 
     .brands{
-        margin-top: 1rem;
+        margin-top: 10rem;
     }
 
     .brands img{
@@ -516,11 +744,11 @@ body{
 
     .features .left, 
     .features .right{ 
-        width: 33%;
+        width: 31%;
     }   
 
     .features .mockup {
-        top: -20%;
+        top: -50%;
     }
     .features .mockup img{
         width: 60%;
@@ -532,7 +760,7 @@ body{
     }
 
     .features .feature .desc h3{
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
 
     .features .feature .desc p{
@@ -599,10 +827,10 @@ body{
     .features .mockup {
         position: relative;
         order: 1;
-        transform: translate(-50%,-25%);
+        transform: translate(-50%,-60%);
     }
     .features .mockup img{
-        width: 50%;
+        width: 55%;
     }
 
     .brands img{
@@ -622,13 +850,34 @@ body{
 
 }
 
+@media(max-width: 426px){
+
+    .features .left{
+        margin-top: -10rem;
+    }
+
+    .features .mockup{
+        transform: translate(-50%,-45%);
+    }
+
+    .navbar header a{
+        display: inline-block;
+        width: 150px;
+    }
+
+    .navbar header a img{
+        width: 100%;
+    }
+
+}
+
 @media(max-width: 375px){
     .hero-section .content {
-        width: 20rem;
+        width: 19rem;
     }
 
     .features .left{
-        margin-top: -3rem;
+        margin-top: -6rem;
     }
 
     .brands{
